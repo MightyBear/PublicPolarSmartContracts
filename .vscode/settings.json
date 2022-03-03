@@ -1,0 +1,16 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"psi-header.changes-tracking": {
+		"autoHeader": "autoSave"
+	},
+	"psi-header.templates": [
+		{
+			"language": "*",
+			"template": ["Copyright (c) <<year>> <<company>>"]
+		}
+	],
+	"psi-header.config": {
+		"company": "Mighty Bear Games"
+	}
+}
