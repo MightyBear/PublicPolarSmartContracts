@@ -4,7 +4,7 @@
 		"@maticnetwork/maticjs-ethers": "^1.0.2",
 		"@nomicfoundation/hardhat-verify": "^1.0.0",
 		"@openzeppelin/contracts": "4.8.3",
-		"@openzeppelin/contracts-upgradeable": "4.8.3",
+		"@openzeppelin/contracts-upgradeable": "4.9.1",
 		"aws-sdk": "^2.1290.0",
 		"merkletreejs": "^0.2.31",
 		"minimist": "^1.2.6",
