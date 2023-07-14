@@ -7,12 +7,10 @@ import { verify } from "./utils";
 const address = process.argv[2];
 const argv = process.argv.slice(3);
 
-console.info(
-	`Verifying MightyActionHeroesGadget at ${address} with args: ${argv}`
-);
+console.info(`Verifying MightyNetERC721TokenIdDecoder at ${address} with args: ${argv}`);
 
 verify(
-	"contracts/gadget/MightyActionHeroesGadget.sol:MightyActionHeroesGadget",
+	"contracts/restrictable/MightyNetERC721TokenIdDecoder.sol:MightyNetERC721TokenIdDecoder",
 	address,
 	...argv
 ).catch(error => {

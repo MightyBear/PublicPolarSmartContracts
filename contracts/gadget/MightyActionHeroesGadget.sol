@@ -20,7 +20,7 @@ contract MightyActionHeroesGadget is MightyNetERC721Upgradeable {
 			contractURI_,
 			operatorFilterRegistry_,
 			restrictedRegistry_,
-			"Mighty Action Hero Gadgets",
+			"Mighty Action Hero Gadget",
 			"MAHG"
 		);
 	}

@@ -40,7 +40,6 @@ describe("MightyNet Terminal", () => {
 	let adminRole: BytesLike;
 	let receiveExecutorRole: BytesLike;
 	const defaultMinFee = 1;
-	const nullAddress = "0x0000000000000000000000000000000000000000";
 	const requestEventId = "requestEventIdTestValue";
 
 	async function deployTestFixture() {
@@ -423,7 +422,7 @@ describe("MightyNet Terminal", () => {
 			});
 
 			it("should fail when vault is not set", async () => {
-				await mnTerminal.setFeesVaultAddress(nullAddress);
+				await mnTerminal.setFeesVaultAddress(ethers.constants.AddressZero);
 
 				await expect(
 					mnTerminal
@@ -436,7 +435,7 @@ describe("MightyNet Terminal", () => {
 								value: defaultMinFee,
 							}
 						)
-				).to.revertedWith(`InvalidAddress("${nullAddress}")`);
+				).to.revertedWith(`InvalidAddress("${ethers.constants.AddressZero}")`);
 			});
 
 			it("should not be able to receive to game with unregistered token contract", async () => {
@@ -553,7 +552,7 @@ describe("MightyNet Terminal", () => {
 			});
 
 			it("should fail when vault is not set", async () => {
-				await mnTerminal.setFeesVaultAddress(nullAddress);
+				await mnTerminal.setFeesVaultAddress(ethers.constants.AddressZero);
 
 				await expect(
 					mnTerminal
@@ -565,7 +564,7 @@ describe("MightyNet Terminal", () => {
 								value: defaultMinFee,
 							}
 						)
-				).to.revertedWith(`InvalidAddress("${nullAddress}")`);
+				).to.revertedWith(`InvalidAddress("${ethers.constants.AddressZero}")`);
 			});
 
 			it("should not be able to receive to game with unregistered token contract", async () => {

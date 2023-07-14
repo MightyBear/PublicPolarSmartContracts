@@ -275,8 +275,7 @@ describe("MightyNetERC721RestrictedRegistryV2", () => {
 		});
 
 		it("should not restrict if tokenContract's restricted registry is not the same", async () => {
-			const nullAddress = "0x0000000000000000000000000000000000000000";
-			tokenContract.connect(owner).setRestrictedRegistry(nullAddress);
+			tokenContract.connect(owner).setRestrictedRegistry(ethers.constants.AddressZero);
 			await expect(restrictedRegistry
 				.connect(restrictor)
 				.restrict(tokenContract.address, [1, 2])
