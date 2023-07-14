@@ -47,7 +47,7 @@ const config: HardhatUserConfig = {
 			accounts: [process.env.MAINNET_PRIVATE_KEY!],
 		},
 		mainnetL2: {
-			url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.L2_ALCHEMY_API_KEY}`,
+			url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.L2_ALCHEMY_API_KEY}`,
 			accounts: [process.env.MAINNET_PRIVATE_KEY!],
 		},
 	},
@@ -58,6 +58,7 @@ const config: HardhatUserConfig = {
 	etherscan: {
 		apiKey: {
 			mainnet: process.env.ETHERSCAN_API_KEY!,
+			arbitrumOne: process.env.ARBISCAN_API_KEY!,
 			arbitrumGoerli: process.env.ARBISCAN_API_KEY!,
 		},
 	},

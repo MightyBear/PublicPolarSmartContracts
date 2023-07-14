@@ -182,6 +182,16 @@ Contains the smart contracts for the **MightyNet** ecosystem by **Mighty Bear Ga
 
 ---
 
+## _Claimer_
+
+> ### **MightyNetERC1155Claimer**
+>
+> _contracts/claimer/MightyNetERC1155Claimer.sol_
+>
+> The contract where eligible user can interact with to claim items from a MightyNetERC1155 contract.
+
+---
+
 ## _Utilitites_
 
 > ### **Whitelists**
@@ -189,6 +199,12 @@ Contains the smart contracts for the **MightyNet** ecosystem by **Mighty Bear Ga
 > _contracts/utils/Whitelists.sol_
 >
 > A library used that encapsulates the storage and operations on a root hash of the Merkle tree used for whitelisting.
+
+> ### **MightyNetERC721TokenIdDecoder**
+>
+> _contracts/token-id-decoder/MightyNetERC721TokenIdDecoder.sol_
+>
+> A utility contract that will be used by other contracts to help decode our MightyNetERC721 token ids.
 
 ---
 
@@ -294,6 +310,60 @@ Contains the smart contracts for the **MightyNet** ecosystem by **Mighty Bear Ga
 
 The tests are written and ran with [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
 
+## BigBearSyndicateMinter
+
+\_test/nft/bbsMinter.ts
+
+The tests for the **BigBearSyndicateMinter** contract.
+
+## BigBearKey
+
+\_test/nft/bigBearKey.ts
+
+The tests for the **BigBearKey** contract.
+
+## BigBearSyndicate
+
+\_test/nft/bigBearSyndicate.ts
+
+The tests for the **BigBearSyndicate** contract.
+
+## MightyNetERC721RestrictedRegistry
+
+\_test/nft/mightyNetERC721RestrictedRegistry.ts
+
+The tests for the **MightyNetERC721RestrictedRegistry** contract.
+
+## MightyNetERC721RestrictedRegistryV2
+
+\_test/nft/mightyNetERC721RestrictedRegistryV2.ts
+
+The tests for the **MightyNetERC721RestrictedRegistryV2** contract.
+
+## MightyNetERC721TokenIdDecoder
+
+\_test/nft/mightyNetERC721TokenIdDecoder.ts
+
+The tests for the **MightyNetERC721TokenIdDecoder** contract.
+
+## MightyNetERC721Upgradeable
+
+\_test/nft/mightyNetERC721Upgradeable.ts
+
+The tests for all our **MightyNetERC721Upgradeable** contract.
+
+## MightyNetERC1155Claimer
+
+\_test/nft/mightyNetERC1155Claimer.ts
+
+The tests for the **MightyNetERC1155Claimer** contract.
+
+## MightyNetERC1155Upgradeable
+
+\_test/nft/mightyNetERC1155UpgradeableTests.ts
+
+The tests for all our **MightyNetERC1155Upgradeable** contract.
+
 ## MightyNetGenesisPass
 
 \_test/nft/mightyNetGenesisPass.ts
@@ -306,23 +376,17 @@ The tests for the **MightyNetGenesisPass** contract.
 
 The tests for the **MightyNetGenesisPassMinter** contract.
 
-## BigBearSyndicate
-
-\_test/nft/bigBearSyndicate.ts
-
-The tests for the **BigBearSyndicate** contract.
-
-## BigBearSyndicateMinter
-
-\_test/nft/bbsMinter.ts
-
-The tests for the **BigBearSyndicateMinter** contract.
-
 ## MightyNetLocking
 
 \_test/nft/mightyNetLocking.ts
 
 The tests for the **MightyNetLocking** contract.
+
+## MightyNetShop
+
+\_test/nft/mightyNetShop.ts
+
+The tests for the **MightyActionHeroesSupplyCrates** contract.
 
 ## MightyNetTerminal
 
@@ -330,14 +394,8 @@ The tests for the **MightyNetLocking** contract.
 
 The tests for the **MightyNetTerminal** contract.
 
-## MightyActionHeroesGadget
+## MightyTrophy
 
-\_test/nft/mightyActionHeroesGadget.ts
+\_test/nft/mightyTrophy.ts
 
-The tests for the **MightyActionHeroesGadget** contract.
-
-## MightyActionHeroesSupplyCrates
-
-\_test/nft/MightyActionHeroesSupplyCrates.ts
-
-The tests for the **MightyActionHeroesSupplyCrates** contract.
+The tests for the **MightyTrophy** contract.

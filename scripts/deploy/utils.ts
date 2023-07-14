@@ -169,7 +169,6 @@ export async function setupERC721(
 	let erc721Contract = await erc721Factory.attach(erc721ContractAddress) as MightyNetERC721Upgradeable;
 
 	await erc721Contract
-		.connect(terminalContractAddress)
 		.grantRole(await erc721Contract.MINTER_ROLE(), terminalContractAddress);
 
 	console.log(`Granting registering ${erc721ContractAddress}(${contractName}) as ERC721 Contract on  to terminal contract at ${terminalContractAddress}...`);
@@ -179,4 +178,20 @@ export async function setupERC721(
 	terminalContract.setTokenContracts(erc721ContractAddress, await terminalContract.ERC721_CONTRACT_TYPE());
 
 	console.log(`Successfully ERC721 setup.`);
+}
+
+export async function setupERC1155Claimer(
+	contractName: string,
+	erc1155ContractAddress: string,
+	erc1155ClaimerContractAddress: string,
+){
+	console.log(`Granting minter role from ${erc1155ContractAddress} (${contractName}) to claimer contract at ${erc1155ClaimerContractAddress}...`);
+
+	let erc1155Factory = await ethers.getContractFactory(contractName);
+	let erc1155Contract = await erc1155Factory.attach(erc1155ContractAddress) as MightyNetERC1155Upgradeable;
+
+	await erc1155Contract
+		.grantRole(await erc1155Contract.MINTER_ROLE(), erc1155ClaimerContractAddress);
+
+	console.log(`Successfully ERC1155Claimer setup.`);
 }

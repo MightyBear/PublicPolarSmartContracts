@@ -4,13 +4,12 @@
 
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
-import { BigNumber, BytesLike } from "ethers";
+import { BytesLike } from "ethers";
 import { ethers, upgrades } from "hardhat";
 import {
 	MightyNetShop,
 } from "../../typechain";
 import {
-	deployOperatorFilterRegistry,
 	setProxyAdmin,
 	setTransparentUpgradeableProxyAdmin,
 } from "./utils/testHelper";
@@ -29,7 +28,6 @@ describe("MightyNet Shop", () => {
 	let originalProxyAdminAddress: string;
 
 	let adminRole: BytesLike;
-	const nullAddress = "0x0000000000000000000000000000000000000000";
 
 	async function deployTestFixture() {
 		const [
@@ -39,8 +37,6 @@ describe("MightyNet Shop", () => {
 			vault,
 			proxyUpgradeAdmin,
 		] = await ethers.getSigners();
-
-		const operatorFilterRegistry = await deployOperatorFilterRegistry();
 
 		const mnShop = (await deployUpgradeable(
 			"MightyNetShop",
