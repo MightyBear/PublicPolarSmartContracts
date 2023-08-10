@@ -63,7 +63,6 @@ contract MightyNetERC1155Claimer is
 		payable
 		nonReentrant
 		whenNotPaused
-		onlyWhitelisted(msg.sender, merkleProof, claimWhitelist)
 	{
 		if (addressToHaveClaimed[msg.sender]) {
 			revert UserAlreadyClaimed(msg.sender);
@@ -169,17 +168,5 @@ contract MightyNetERC1155Claimer is
 
 	function popFromClaimWhitelist() external onlyRole(DEFAULT_ADMIN_ROLE) {
 		claimWhitelist.pop();
-	}
-
-	// ------------------------------
-	// 			  Modifiers
-	// ------------------------------
-
-	modifier onlyWhitelisted(
-		address user,
-		bytes32[] calldata merkleProof,
-		Whitelists.MerkleProofWhitelist[] storage whitelist
-	) {
-		_;
 	}
 }

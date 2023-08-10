@@ -4,7 +4,6 @@
 
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
-import { BigNumber } from "ethers";
 import { BytesLike, keccak256 } from "ethers/lib/utils";
 import { ethers, upgrades } from "hardhat";
 import MerkleTree from "merkletreejs/dist/MerkleTree";
@@ -12,9 +11,6 @@ import {
 	MightyActionHeroesSupplyCrates,
 	MightyNetERC1155Claimer,
 } from "../../typechain";
-import {
-	BigBearSyndicateMinterTestHelper
-} from "./utils/bbsMinterTestHelper";
 import { deployUpgradeable } from "./utils/deploy";
 import {
 	buildMerkleTree,
@@ -407,6 +403,14 @@ describe("Mighty Net ERC1155 Claimer", () => {
 			).to.be.revertedWith(
 				`UserAlreadyClaimed(\"${player1.address}\")`
 			);
+		});
+
+		it("should revert if claimer is not under any trees", async () => {
+			await mahSupplyCrates.grantRole(minterRole, mnERC1155Claimer.address);
+
+			const hexProof = merkleTree.getHexProof(keccak256(player1.address));
+
+			await expect(mnERC1155Claimer.claim(hexProof)).to.be.revertedWith(`NotWhitelisted(\"${owner.address}\")`);
 		});
 	});
 

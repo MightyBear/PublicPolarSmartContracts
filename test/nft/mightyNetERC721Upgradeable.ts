@@ -20,7 +20,7 @@ import { deployUpgradeable } from "./utils/deploy";
 const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
 
 describe("MightyNetERC721Upgradeable Tests", async () => {
-	let contractNameArray: Array<string> = ["MightyActionHeroesGadget"];
+	let contractNameArray: Array<string> = ["MightyActionHeroesGadget", "MightyActionHeroesHeroes"];
 
 	contractNameArray.forEach(contractName => {
 		describe(contractName, () => {

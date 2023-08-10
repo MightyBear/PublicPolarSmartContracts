@@ -140,6 +140,12 @@ describe("MightyNetERC721RestrictedRegistryV2", () => {
 			await expect(restrictedRegistry.connect(owner).unpause()).to.not.be
 				.reverted;
 		});
+
+		it("should not be able to initialise again", async () => {
+			await expect(
+				restrictedRegistry.connect(owner).initialize()
+			).to.be.reverted;
+		});
 	});
 
 	describe("Restricting", () => {
